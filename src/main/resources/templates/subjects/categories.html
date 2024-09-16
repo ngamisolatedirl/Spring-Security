@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .main-content {
+            padding: 20px;
+            text-align: center;
+        }
+        .main-content h1 {
+            color: #333;
+        }
+        .main-content a {
+            text-decoration: none;
+            color: #04AA6D;
+            font-weight: bold;
+        }
+        .main-content a:hover {
+            color: #039f5b;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+<header th:replace="fragments/header :: header"></header>
+
+<div class="main-content">
+    <h1>Categories</h1>
+    <a th:href="@{/admin/createCategory}">Add Category</a>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="category : ${categoriesList}">
+            <td th:text="${category.id}"></td>
+            <td th:text="${category.name}"></td>
+            <td>
+                <a th:href="@{/admin/editCategory/{id}(id=${category.id})}">Edit</a>
+                <a th:href="@{/admin/deleteCategory/{id}(id=${category.id})}">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<footer>
+    <p>© 2024 Your Company. All rights reserved.</p>
+</footer>
+</body>
+</html>

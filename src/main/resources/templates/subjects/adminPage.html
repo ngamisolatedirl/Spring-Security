@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .main-content {
+            padding: 20px;
+            text-align: center;
+        }
+        .main-content h1 {
+            color: #333;
+        }
+        .main-content ul {
+            list-style: none;
+            padding: 0;
+        }
+        .main-content ul li {
+            margin: 10px 0;
+        }
+        .main-content ul li a {
+            text-decoration: none;
+            color: #04AA6D;
+            font-weight: bold;
+        }
+        .main-content ul li a:hover {
+            color: #039f5b;
+        }
+    </style>
+</head>
+<body>
+<header th:replace="fragments/header :: header"></header>
+
+<div class="main-content">
+    <h1>Admin Page</h1>
+    <ul>
+        <li><a th:href="@{/admin/categories}">Manage Categories</a></li>
+        <li><a th:href="@{/admin/viewProducts}">Manage Products</a></li>
+    </ul>
+</div>
+
+<footer>
+    <p>© 2024 Your Company. All rights reserved.</p>
+</footer>
+</body>
+</html>

@@ -7,3 +7,4 @@ public class CommonDefine1
     public static String ERROR_MSG = "error";
     public static Integer ERROR_CODE = 500;
 }
+// Im handsome
